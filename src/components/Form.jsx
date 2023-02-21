@@ -16,7 +16,7 @@ export default function Form() {
                     <Label for='email' className='text-base font-bold text-secondary'>
                         Email
                     </Label>
-                    <Input
+                    <input
                         id='email'
                         type='text'
                         className='w-full rounded-md bg-slate-200 p-3 text-dark focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary'

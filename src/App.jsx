@@ -1,11 +1,13 @@
-
-import Home from '../public/Home'
+import PlaceContentCenter from './components/sm-components/PlaceContentCenter'
+import Home from './Home'
+import Film from './components/sm-components/Film'
 
 function App() {
     return (
-        <div>
-           <Home/>
-        </div>
+        //    <PlaceContentCenter className={'bg-primary text-sm'}>
+        //         <Film/>
+        //    </PlaceContentCenter>
+        <Home />
     )
 }
 

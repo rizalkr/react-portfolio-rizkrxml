@@ -41,19 +41,12 @@ export default function Navbar() {
                                 <span className='hamburger-line transition duration-300 ease-in-out origin-bottom-left'></span>
                             </button>
                         </div>
-                        <nav
-                            id='nav-menu'
-                            className={
-                                responsive
-                                    ? 'nav-menu '
-                                    : 'hidden nav-menu'
-                            }>
+                        <nav id='nav-menu' className={responsive ? 'nav-menu ' : 'hidden nav-menu'}>
                             <ul className='block lg:flex '>
                                 <LinkNav href={'#home'} value={'Home'} />
                                 <LinkNav href={'#about'} value={'About'} />
                                 <LinkNav href={'#portfolio'} value={'Portfolio'} />
                                 <LinkNav href={'#client'} value={'Client'} />
-                                <LinkNav href={'#blog'} value={'Blog'} />
                                 <LinkNav href={'#contact'} value={'Contact'} />
                             </ul>
                         </nav>
