@@ -19,7 +19,7 @@ export default function About() {
                     </div>
                     <div className='w-full px-4 lg:w-1/2'>
                         <h4 className='mb-3 text-lg font-semibold uppercase text-secondary'>Let's Make Friends</h4>
-                        <p>If you want to know me more and want to know my daily life you can visit some of the social media that I have.</p>
+                        <p className='text-secondary'>If you want to know me more and want to know my daily life you can visit some of the social media that I have.</p>
                         <div className='mt-3 flex items-center'>
                             <Twitter />
 

@@ -50,14 +50,14 @@ function Projects() {
                         className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px] ${
                             durum === 2 ? 'bg-[linear-gradient(90deg,#b004b0,#38097a)]' : ''
                         }  `}>
-                        My Playground
+                        Playground
                     </button>
                     <button
                         onClick={() => setDurum(3)}
                         className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px]  ${
                             durum === 3 ? 'bg-[linear-gradient(90deg,#b004b0,#38097a)]' : ''
                         }`}>
-                        My Playground 2
+                        Playground 2
                     </button>
                 </div>
                 <div className=' p-10 gap-8 items-center justify-center flex flex-wrap'>
