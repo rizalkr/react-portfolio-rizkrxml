@@ -5,6 +5,7 @@ import { getMovies, searchMovies } from './api'
 
 export default function Film() {
     const [popularMovies, setPopularMovies] = useState([])
+    const nameRef = useRef()
 
     useEffect(() => {
         getMovies()
@@ -32,19 +33,18 @@ export default function Film() {
     }
 
     const search = async (q) => {
-        if (q.length >= 3) {
-            const queryMovies = await searchMovies(q)
-            setPopularMovies(queryMovies.results)
-        }
+        q.preventDefault()
+        const queryMovies = await searchMovies(q)
+        setPopularMovies(queryMovies.current.value)
     }
 
-    const searchMovies = () => {}
+
 
     return (
         <>
             <div className='flex gap-4 mb-2'>
-                <Input placeholder='search movies...' className='rounded-md my-2 w-[50%]' onChange={({ target }) => search(target.value)} />
-                <button className=' bg-primary px-4 py-2 rounded h-10 justify-center whitespace-nowrap inline-flex gap-2 m-2'>Search</button>
+                <Input placeholder='search movies...' className='rounded-md my-2 w-[50%]' ref={nameRef} />
+                <button onClick={search} className=' bg-primary px-4 py-2 rounded h-10 justify-center whitespace-nowrap inline-flex gap-2 m-2'>Search</button>
             </div>
             <div className='movie-container w-full flex items-center justify-center overflow-x-scroll gap-5'>
                 <MovieList />
