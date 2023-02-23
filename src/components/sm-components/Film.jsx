@@ -1,12 +1,12 @@
-import { useEffect, useState, useRef } from 'react'
-import { Button } from 'react-bootstrap'
+import { useEffect, useRef, useState } from 'react'
+import Button from './Button'
 import Input from '../sm-components/Input'
 import { getMovies, searchMovies } from './api'
 
 export default function Film() {
     const [popularMovies, setPopularMovies] = useState([])
+    const [resButton, setResButton] = useState(false)
     const nameRef = useRef()
-
     useEffect(() => {
         getMovies()
             .then((result) => {
@@ -33,18 +33,17 @@ export default function Film() {
     }
 
     const search = async (q) => {
-        q.preventDefault()
-        const queryMovies = await searchMovies(q)
-        setPopularMovies(queryMovies.current.value)
+        if (q.length >= 3) {
+            const queryMovies = await searchMovies(q)
+            setPopularMovies(queryMovies.results)
+        }
     }
-
-
 
     return (
         <>
             <div className='flex gap-4 mb-2'>
                 <Input placeholder='search movies...' className='rounded-md my-2 w-[50%]' ref={nameRef} />
-                <button onClick={search} className=' bg-primary px-4 py-2 rounded h-10 justify-center whitespace-nowrap inline-flex gap-2 m-2'>Search</button>
+                <Button onClick={() => search(nameRef.current.value)}>Search</Button>
             </div>
             <div className='movie-container w-full flex items-center justify-center overflow-x-scroll gap-5'>
                 <MovieList />
